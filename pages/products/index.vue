@@ -9,10 +9,10 @@
 </template>
 
 <script setup>
-    /* apply different layout */
-    definePageMeta({
-            layout: 'products'
-    })
+/* apply different layout */
+definePageMeta({
+    layout: 'products'
+})
 
-    const { data: products } = await useFetch('https://fakestoreapi.com/products')
+const { data: products } = await useFetch('https://fakestoreapi.com/products')
 </script>

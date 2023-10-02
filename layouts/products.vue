@@ -2,7 +2,7 @@
   <div>
     <header class="shadow-sm bg-white">
       <nav class="container mx-auto p-4">
-        <NuxtLink to="/products" class="font-bold">ShopMe Merch</NuxtLink>
+        <NuxtLink to="/products" class="font-bold">ChicBoutique Merch</NuxtLink>
       </nav>
     </header>
 
@@ -20,6 +20,12 @@
     </footer>
 </div>
 </template>
+
+<script setup>
+useHead({
+    title: 'ChicBoutique Merch',
+})
+</script>
 
 <style scoped>
 .router-link-exact-active{

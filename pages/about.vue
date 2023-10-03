@@ -6,14 +6,17 @@
 </template>
 
 <script setup>
+// basic api request
 // const { data } = await useFetch('/api/test?name=daniele', {
 //     method: 'post',
 //     body: {
 //         age: 30,
 //     }
 // })
-const { data } = await useFetch('/api/test')
-console.log(data);
+//const { data } = await useFetch('/api/basic')
+
+// dynamic api request
+const { data } = await useFetch('/api/currency/EUR')
 
 
 </script>

@@ -19,6 +19,12 @@
 </template>
 
 <script setup>
+import { useCounterStore } from '@/stores/useStore'
+
+// access the `store` variable anywhere in the component ✨
+const {name} = useCounterStore()
+console.log(name);
+
 useHead({
     title: 'ChicBoutique Merch',
 })

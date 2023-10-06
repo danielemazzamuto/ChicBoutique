@@ -1,8 +1,11 @@
 <template>
   <div>
-    <header class="shadow-sm bg-white">
-      <nav class="container mx-auto p-4">
+    <header class="shadow-sm bg-white ">
+      <nav class="container mx-auto p-4 flex justify-between">
         <NuxtLink to="/" class="font-bold text-2xl">ChicBoutique Merch</NuxtLink>
+        <div>
+        <i class="material-icons text-3xl">shopping_cart_checkout</i>
+      </div>
       </nav>
     </header>
 

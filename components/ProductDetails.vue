@@ -9,7 +9,7 @@
         <p class="text-xl my-7">Price - ${{ product.price }}</p>
         <h3 class="font-bold border-b-2 mb-4 pb-2">Product description:</h3>
         <p class="mb-7">{{ product.description }}</p>
-        <button class="btn flex">
+        <button @click="addToCart(product)" class="btn flex">
           <i class="material-icons mr-2">add_shopping_cart</i>
           <span>Add to cart</span>
         </button>
@@ -19,7 +19,21 @@
 </template>
 
 <script setup>
-  const { product } = defineProps(['product'])
+// Import Store
+import { useShopStore } from '@/stores/useStore.js'
+
+const shopStore  = useShopStore()
+const { product } = defineProps(['product'])
+
+console.log(shopStore);
+
+// add cart
+const addToCart = (product) => {
+    shopStore.addCart(product);
+    console.log(shopStore.cart.products);
+}
+
+
 </script>
 
 <style scoped>

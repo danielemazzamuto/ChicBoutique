@@ -1,12 +1,26 @@
 
 import { defineStore } from 'pinia'
-export const useCounterStore = defineStore('counter', () => {
-  const count = ref(0)
-  const name = ref('Eduardo')
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
+
+export const useShopStore = defineStore('shopStore', () => {
+  
+  const cart = ref({
+    products: [],
+  })
+
+  const addCart = (prod) => {
+    const prodObj = {
+      id: prod.id,
+      title: prod.title,
+      price: prod.price,
+    }
+    cart.value.products.push(prodObj)
   }
 
-  return { count, name, doubleCount, increment }
+  const totProductsCart = computed(() => cart.value.products.length)
+
+  return { 
+    cart,
+    addCart,
+    totProductsCart
+   }
 })

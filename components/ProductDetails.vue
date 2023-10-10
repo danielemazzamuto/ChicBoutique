@@ -30,12 +30,14 @@ const { product } = defineProps(['product'])
 // add cart + local storage
 const addToCart = (product) => {
     shopStore.addCart(product);
-    console.log(shopStore.cart.products);
     //add to local storage
-    const cartLocalStorage = nuxtStorage.localStorage.getData('cart');
-    nuxtStorage.localStorage.setData('cart',
-      [cartLocalStorage,product]
-    )
+    if (nuxtStorage.localStorage.getData('cart')?.length) {
+        const currentProducts = nuxtStorage.localStorage.getData('cart')
+        const newData = [...currentProducts, product]
+        nuxtStorage.localStorage.setData('cart', newData)
+      } else {
+        nuxtStorage.localStorage.setData('cart', [product])
+      }
 }
 
 </script>

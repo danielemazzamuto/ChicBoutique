@@ -1,11 +1,7 @@
 
-import { defineStore } from 'pinia'
-
 export const useShopStore = defineStore('shopStore', () => {
   
-  const cart = ref({
-    products: [],
-  })
+  const cart = ref([]);
 
   const addCart = (prod) => {
     const prodObj = {
@@ -13,11 +9,13 @@ export const useShopStore = defineStore('shopStore', () => {
       title: prod.title,
       price: prod.price,
     }
-    cart.value.products.push(prodObj)
+    cart.value.push(prodObj)
   }
 
-  const totProductsCart = computed(() => cart.value.products.length)
-
+  const totProductsCart = computed(() => {
+    return cart.value.length
+  })
+ 
   return { 
     cart,
     addCart,

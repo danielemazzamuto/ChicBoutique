@@ -5,6 +5,7 @@
         <NuxtLink to="/products" class="font-bold text-2xl">ChicBoutique Merch</NuxtLink>
         <div>
         <div class="flex justify-center items-center">
+          <NuxtLink to="/" class="mr-5">Home</NuxtLink>
           <span class="rounded-full bg-green-200 px-1 mr-1">{{ countCart }}</span>
           <NuxtLink to="/cart"><i class="material-icons text-3xl">shopping_cart_checkout</i></NuxtLink>
         </div>

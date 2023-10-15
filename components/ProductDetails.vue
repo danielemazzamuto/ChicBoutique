@@ -21,7 +21,7 @@
 <script setup>
 // Import Store
 import { useShopStore } from '@/stores/useStore.js'
-import nuxtStorage from 'nuxt-storage';
+//import nuxtStorage from 'nuxt-storage';
 
 const shopStore  = useShopStore()
 const { product } = defineProps(['product'])
@@ -31,13 +31,13 @@ const { product } = defineProps(['product'])
 const addToCart = (product) => {
     shopStore.addCart(product);
     //add to local storage
-    if (nuxtStorage.localStorage.getData('cart')?.length) {
-        const currentProducts = nuxtStorage.localStorage.getData('cart')
-        const newData = [...currentProducts, product]
-        nuxtStorage.localStorage.setData('cart', newData)
-      } else {
-        nuxtStorage.localStorage.setData('cart', [product])
-      }
+    // if (nuxtStorage.localStorage.getData('cart')?.length) {
+    //     const currentProducts = nuxtStorage.localStorage.getData('cart')
+    //     const newData = [...currentProducts, product]
+    //     nuxtStorage.localStorage.setData('cart', newData)
+    //   } else {
+    //     nuxtStorage.localStorage.setData('cart', [product])
+    //   }
 }
 
 </script>
